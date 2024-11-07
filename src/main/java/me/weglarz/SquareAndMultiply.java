@@ -8,15 +8,14 @@ public class SquareAndMultiply {
 
         while (exponent > 0) {
             // Pokud je exponent lichý, vynásobit výsledek současnou hodnotou základu
-            if ((exponent & 1) == 1) {
+            if ((exponent & 1) == 1)
                 result = (result * base) % modulus;
 
-                // Druhá mocnina základu
-                base = (base * base) % modulus;
+            // Druhá mocnina základu
+            base = (base * base) % modulus;
 
-                // Dělíme exponent dvěma
-                exponent >>= 1; // Ekvivalentní exponent / 2
-            }
+            // posun bitu o jeden doprava (v podstatě  ekvivalentní exponent / 2)
+            exponent >>= 1;
         }
 
         return result;
